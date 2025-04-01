@@ -169,11 +169,11 @@ This is a key innovation in this implementation, designed to explicitly provide 
     *   Still uses `sympy_tokenizer` to get prefix notation tokens.
     *   **Crucially, it *also* generates an "absolute path" for each token in the expression tree.** This path represents the traversal from the root. For example, in `add(sin(x), mul(x, x))` which tokenizes to `['add', 'sin', 'x', 'mul', 'x', 'x']`:
         *   `'add'`: `[1]` (root)
-        *   `'sin'`: `[1, 0]` (first child of root)
-        *   `'x' (in sin)`: `[1, 0, 0]` (first child of 'sin')
-        *   `'mul'`: `[1, 1]` (second child of root)
-        *   `'x' (first in mul)`: `[1, 1, 0]` (first child of 'mul')
-        *   `'x' (second in mul)`: `[1, 1, 1]` (second child of 'mul')
+        *   `'sin'`: `[1, 0, 1]` (first child of root)
+        *   `'x' (in sin)`: `[1, 0, 1, 0]` (first child of 'sin')
+        *   `'mul'`: `[1, 0, 1]` (second child of root)
+        *   `'x' (first in mul)`: `[1, 0, 1, 1, 0]` (first child of 'mul')
+        *   `'x' (second in mul)`: `[1, 0, 1, 0, 1]` (second child of 'mul')
     *   Numerical constants are still encoded using P10 (`encode_number`), but their corresponding paths are adapted (details in code). The paths are padded to a fixed `pos_dim=6`.
 
 *   **Encoder Positional Embeddings (`encode_enc`):**
