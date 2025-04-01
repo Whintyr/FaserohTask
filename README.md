@@ -11,7 +11,8 @@ The project involved three main tasks:
 3.  **Transformer Model Training (Optional):** Implementing and training a Transformer-based sequence-to-sequence model, exploring novel tokenization and attention mechanisms, to perform the same task.
 
 This README provides a detailed overview of the implementation for each task, highlighting the methodologies, architectural choices, and key findings.
-The images of model architectures are also uploaded alongside in this Github repository
+The images of model architectures are also uploaded alongside in this Github repository.
+The model pths can be accessed from https://drive.google.com/drive/folders/1wCKMzRB7pEp55P2wuqA9YcPqkkHVtQCF?usp=drive_link.
 
 ## Repository Structure
 
@@ -21,7 +22,7 @@ The submission consists of three main Jupyter Notebooks:
 2.  `LSTM_Training.ipynb`: Details the implementation, training, and evaluation of the LSTM-based sequence-to-sequence model.
 3.  `Transformer_Training.ipynb`: Details the implementation, training, and evaluation of the Transformer-based sequence-to-sequence model, including novel tokenization and attention mechanisms.
 
-PDF versions of each notebook with outputs are also included.
+Each notebook with outputs are also uploaded.
 
 ---
 
@@ -61,7 +62,7 @@ To programmatically generate a diverse dataset of mathematical functions represe
 
 ### Challenges & Compute Constraints
 
-Generating symbolic expressions and computing Taylor series, especially with validation checks, is computationally intensive. Even with multiprocessing on 16 cores, generating the dataset of 3000 valid, unique samples (after filtering) took approximately **3 hours** on my available hardware. This limitation restricted the feasible dataset size for this evaluation. A larger dataset would likely benefit model training further.
+Generating symbolic expressions and computing Taylor series, especially with validation checks, is computationally intensive. Even with multiprocessing on 16 cores, generating the dataset of 3000 samples (after filtering) took approximately **3 hours** on my available hardware. This limitation restricted the feasible dataset size for this evaluation. A larger dataset would likely benefit model training further.
 
 ---
 
@@ -270,16 +271,16 @@ These results show a significant improvement over the LSTM model, suggesting tha
 
 Future work could involve:
 1.  Generating a much larger dataset.
-2.  Performing extensive hyperparameter optimization (e.g., using Optuna or Ray Tune).
+2.  Performing extensive hyperparameter optimization.
 3.  Conducting ablation studies on the Transformer's positional encoding and attention mechanisms.
 4.  Training for longer durations.
-5.  Exploring different numerical tokenization strategies.
+5.  Exploring different numerical tokenization strategies and possibly encoding much better representations of the input data.
 
 ---
 
 ## Conclusion
 
-This project successfully demonstrated the feasibility of using sequence-to-sequence models for symbolic mathematics tasks like Taylor expansion prediction.
+This project successfully demonstrated the feasibility of using sequence-to-sequence models for symbolic mathematics tasks like Taylor expansion prediction. Since this employs a good tokenization system for a sequence of numbers, this perfectly aligns with the main task of FASEROH, which is to map a sequence of numbers (histogram data) to a function, I really believe this rough idea right now can make way to a much better architecture, perfectly suited to make a transformer capture the information of the sequence of numbers in the best way possible. In this task: 
 
 *   A robust data generation pipeline using SymPy and multiprocessing was established.
 *   An LSTM with attention model was implemented and trained, providing a baseline performance.
