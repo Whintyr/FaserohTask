@@ -11,8 +11,7 @@ The project involved three main tasks:
 3.  **Transformer Model Training (Optional):** Implementing and training a Transformer-based sequence-to-sequence model, exploring novel tokenization and attention mechanisms, to perform the same task.
 
 This README provides a detailed overview of the implementation for each task, highlighting the methodologies, architectural choices, and key findings.
-
-**Note:** All work was done on a personal branch as requested, and no Pull Requests were made to the original repository.
+The images of model architectures are also uploaded alongside in this Github repository
 
 ## Repository Structure
 
